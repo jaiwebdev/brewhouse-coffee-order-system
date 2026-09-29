@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+body {
+  margin: 0;
+  background-color: #7b7b80;
+
+}
+html {
+  scroll-behavior: smooth;
+  /* Adjust this value based on your navbar height */
+}
