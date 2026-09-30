@@ -11,7 +11,7 @@ import Contact from "./components/contact";
 import Order from "./components/order";
 import AdminOrders from "./components/adminorder.jsx";
 import AdminLogin from "./components/adminlogin";
-import ProtectedAdminRoute from "./components/ProtectedadminRoute.jsx";
+import ProtectedAdminRoute from "./components/ProtectedAdminRoute.jsx";
 import OrderTracking from "./components/ordertracking";
 
 function Home() {
