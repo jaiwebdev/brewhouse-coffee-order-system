@@ -83,7 +83,7 @@ export default function Order() {
       setMessage("");
 
       const response = await axios.post(
-        "http://localhost:5000/api/orders",
+        "https://brewhouse-backend.onrender.com/api/orders",
         {
           customerName,
           phone,

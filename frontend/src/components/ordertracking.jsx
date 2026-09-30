@@ -21,7 +21,7 @@ function OrderTracking() {
       setMessage("");
 
       const url =
-        "http://localhost:5000/api/orders/track/" +
+        "https://brewhouse-backend.onrender.com/api/orders/track/" +
         id +
         "?phone=" +
         customerPhone;
@@ -246,7 +246,7 @@ function OrderTracking() {
               </p>
 
               <p className="font-medium">
-                {order.address}
+                {order.deliveryAddress}
               </p>
             </div>
 

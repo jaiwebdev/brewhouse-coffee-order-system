@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../services/api";
 
 export default function AdminLogin() {
   const navigate = useNavigate();
@@ -17,13 +17,10 @@ export default function AdminLogin() {
     setLoading(true);
 
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/admin/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await api.post("/admin/login", {
+        email,
+        password,
+      });
 
       if (response.data.success) {
         // Save JWT token
@@ -53,11 +50,9 @@ export default function AdminLogin() {
 
   return (
     <section className="flex min-h-screen items-center justify-center bg-stone-100 px-4">
-
       <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
 
         <div className="mb-8 text-center">
-
           <p className="text-sm font-semibold uppercase tracking-widest text-amber-700">
             BrewHouse
           </p>
@@ -69,13 +64,11 @@ export default function AdminLogin() {
           <p className="mt-2 text-stone-500">
             Login to manage customer orders
           </p>
-
         </div>
 
         <form onSubmit={handleLogin} className="space-y-5">
 
           {/* Email */}
-
           <div>
             <label className="mb-2 block font-semibold text-stone-700">
               Email
@@ -92,7 +85,6 @@ export default function AdminLogin() {
           </div>
 
           {/* Password */}
-
           <div>
             <label className="mb-2 block font-semibold text-stone-700">
               Password
@@ -109,7 +101,6 @@ export default function AdminLogin() {
           </div>
 
           {/* Error */}
-
           {error && (
             <p className="rounded-lg bg-red-50 p-3 text-sm font-medium text-red-600">
               {error}
@@ -117,7 +108,6 @@ export default function AdminLogin() {
           )}
 
           {/* Button */}
-
           <button
             type="submit"
             disabled={loading}
@@ -127,9 +117,7 @@ export default function AdminLogin() {
           </button>
 
         </form>
-
       </div>
-
     </section>
   );
 }

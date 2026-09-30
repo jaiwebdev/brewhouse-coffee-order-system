@@ -20,7 +20,7 @@ export default function AdminOrders() {
       const token = localStorage.getItem("adminToken");
 
       const response = await axios.get(
-        "http://localhost:5000/api/orders",
+         "https://brewhouse-backend.onrender.com/api/orders",
         {
           headers: {
             Authorization: "Bearer " + token,
@@ -49,7 +49,7 @@ export default function AdminOrders() {
       const token = localStorage.getItem("adminToken");
 
       const response = await axios.patch(
-        "http://localhost:5000/api/orders/" +
+        "https://brewhouse-backend.onrender.com/api/orders/" +
           orderId +
           "/status",
         {
